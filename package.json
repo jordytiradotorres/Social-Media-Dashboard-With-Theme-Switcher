@@ -1,0 +1,37 @@
+{
+  "name": "clase-1",
+  "version": "1.0.0",
+  "description": "Curso de webpack",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode production --config ./prepro/webpack.config.js",
+    "dev": "webpack serve --mode development --env development --config ./prepro/webpack.config.js"
+  },
+  "keywords": [],
+  "author": "Jordy Tirado Torres",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.12.0",
+    "@babel/plugin-transform-runtime": "^7.12.0",
+    "@babel/preset-env": "^7.12.0",
+    "babel-loader": "^8.1.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^5.0.0",
+    "file-loader": "^6.1.1",
+    "html-webpack-plugin": "^4.5.0",
+    "mini-css-extract-plugin": "^1.0.0",
+    "node-sass": "^4.14.1",
+    "pug": "^3.0.0",
+    "pug-loader": "^2.4.0",
+    "sass": "^1.27.0",
+    "sass-loader": "^10.0.3",
+    "style-loader": "^2.0.0",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.1.3",
+    "webpack-cli": "^4.1.0",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.12.0"
+  }
+}
