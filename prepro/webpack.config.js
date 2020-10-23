@@ -33,9 +33,9 @@ module.exports = {
 				use: [
 					// el loder: miniCSSE... --> nos va a server para produccion
 					// para desarrollo es mas rapido inyectar en el navegador
-					// {
-					// 	loader: MiniCSSExtractPlugin.loader,
-					// },
+					{
+						loader: MiniCSSExtractPlugin.loader,
+					},
 					"style-loader",
 					"css-loader",
 				],
@@ -48,10 +48,9 @@ module.exports = {
 				test: /\.jpg|png|gif|webp|woff|woff2|svg|mp4|mp3|webm$/,
 				use: [
 					{
-						loader: "url-loader",
+						loader: "file-loader",
 						options: {
-							// si las imagenes son pequeñas usar este limit
-							limit: 90000,
+							name: "[path]/[name].[ext]",
 						},
 					},
 				],
@@ -66,8 +65,8 @@ module.exports = {
 			template: path.resolve(__dirname, "src/pug/index.pug"),
 		}),
 		// esto va hacer para produccion
-		// new MiniCSSExtractPlugin({
-		// 	filename: "css/[name].css",
-		// }),
+		new MiniCSSExtractPlugin({
+			filename: "css/[name].css",
+		}),
 	],
 };

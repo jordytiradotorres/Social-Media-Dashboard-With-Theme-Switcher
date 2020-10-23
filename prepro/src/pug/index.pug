@@ -1,9 +1,36 @@
-doctype
-html
-  head
-    meta(charset="UTF-8")
-    meta(name="viewport" content="width=device-width, initial-scale=1.0")
-    title Social Media
-  body
-    h1 comenzamos con pug
-    h2 hola papu
+extends ./includes/template
+block header
+  header.header
+    .container
+      div.header__wrapper
+        div.header__followers
+          h1 Social Media Dashboard
+          p Total Followers: 23,004
+        |
+        nav.header__mode
+          div.theme-switch-wrapper
+            em Dark Mode
+            label.theme-switch(for="checkbox")
+              input#checkbox(type="checkbox")
+              div.slider.round
+block cards
+  section
+    .container
+      .wrapper-card
+        +card("facebook","./images/icon-facebook.svg", "@nathanf", 1987, "./images/icon-up.svg", 12)
+        +card("twitter", "./images/icon-twitter.svg", "@nathanf", 1044, "./images/icon-up.svg", 99)
+        +card("instagram", "./images/icon-instagram.svg", "@realnathanf", "11K", "./images/icon-up.svg", 1099)
+        +card("youtube", "./images/icon-youtube.svg", "Nathan F.", 8239, "./images/icon-down.svg", 144)
+block overview
+  section
+    .container
+      h2.overviewTitle Overview -Today
+      .wrapper-overview
+        +overview("Page Views", "./images/icon-facebook.svg", 87, 3, "./images/icon-up.svg")
+        +overview("Likes", "./images/icon-facebook.svg", 52, 2, "./images/icon-down.svg")
+        +overview("Likes", "./images/icon-instagram.svg", 5462, 2257, "./images/icon-up.svg")
+        +overview("Profile Views", "./images/icon-instagram.svg", "52K", 1375, "./images/icon-up.svg")
+        +overview("Retweets", "./images/icon-twitter.svg", 117, 303, "./images/icon-up.svg")
+        +overview("Likes", "./images/icon-twitter.svg", 507, 553, "./images/icon-up.svg")
+        +overview("Likes", "./images/icon-youtube.svg", 107, 19, "./images/icon-down.svg")
+        +overview("Total Views", "./images/icon-youtube.svg", 1407, 12, "./images/icon-down.svg")

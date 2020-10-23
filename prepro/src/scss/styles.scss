@@ -1,3 +1,16 @@
-body {
-  background-color: peru;
+
+@import "./config/variables";
+@import "./mixins/media-queries";
+@import "./config/base";
+@import "./components/header";
+@import "./components/card";
+@import "./components/card-overview";
+
+[data-theme="dark"] {
+  --color-light-grayish-blue: hsl(228, 28%, 20%);
+  --color-very-dark-blue: hsl(0, 0%, 100%);
+  --color-dark-grayish-blue: hsl(228, 34%, 66%);
+  --color-hover:hsl(228, 28%, 30%);
+  --color-theme: hsl(230, 17%, 14%);
+  --color-very-pale-blue: hsl(230, 17%, 14%);
 }

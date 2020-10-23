@@ -1,0 +1,21 @@
+mixin card(name,icon, email, amount, arrow, today)
+  article.card(class= name)
+    div.card__user
+      img(src= icon, alt="facebook" class="hola")
+      span= email
+    p.card__amount= amount
+    p.card__followers followers
+    div.card__today
+      img(src= arrow, alt="icon arrow")
+      span= `${today} Today`
+
+mixin overview(name, icon, amount, today, arrow)
+  article.card
+    div.card__icon
+      p= name
+      img(src= icon, alt= icon)
+    div.card__amount.overview
+      p= amount
+      div
+        img(src= arrow, alt="icon arrow")
+        span= `${today}%`

@@ -1,0 +1,137 @@
+
+.header {
+  background-color: var(--color-very-pale-blue);
+  border-radius: 0 0 30px 30px;
+
+  &__wrapper {
+
+    @include mq(medium) {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      padding-bottom: 7em;
+    }
+  }
+
+  &__followers {
+    position: relative;
+    padding: 1.5em 0;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      display: block;
+      width: 100%;
+      height: 1px;
+      background-color: var(--color-dark-grayish-blue);
+
+      @include mq(medium) {
+        display: none;
+      }
+    }
+
+    h1 {
+      font-size: 1.7em;
+
+      @include mq(medium) {
+        font-size: 2em;
+      }
+    }
+    
+    p{
+      margin-top: 5px;
+      color: var(--color-dark-grayish-blue);
+      font-weight: bold;
+      margin-bottom: 1em;
+
+      @include mq(medium) {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  // header__mode
+  &__mode {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 5em;
+
+    @include mq(medium) {
+      padding-bottom: 4em;
+    }
+
+    // toggle button
+    nav {
+      display: flex;
+      justify-content: flex-end;
+      padding: 20px 0;
+    }
+    
+    /*slider switch css */
+    .theme-switch-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+
+      em {
+        margin-right: 10px;
+        font-size: 1rem;
+        font-weight: bold;
+        color: var(--color-dark-grayish-blue);
+        font-style: normal;
+      }
+    }
+
+    .theme-switch {
+      display: inline-block;
+      height: 34px;
+      position: relative;
+      width: 60px;
+
+      input {
+        display:none;
+      }
+    }
+
+    .slider {
+      background-color: #ccc;
+      bottom: 0;
+      cursor: pointer;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      transition: .4s;
+
+      &::before {
+        background-color: #fff;
+        bottom: 4px;
+        content: "";
+        height: 26px;
+        right: 4px;
+        position: absolute;
+        transition: .4s;
+        width: 26px;
+      }
+    }
+
+    input:checked + .slider {
+      background: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(-26px);
+    }
+
+    .slider.round {
+      border-radius: 34px;
+    }
+
+    .slider.round:before {
+      border-radius: 50%;
+    }
+  }
+}
